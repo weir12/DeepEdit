@@ -105,6 +105,15 @@ The columns of DeepEdit_result.txt file are:
 
 ​	4, probability of A-to-I editing occurrence. 
 
+```bash
+# Calculate the editing ratio of each site
+perl EditingRatioCal.pl DeepEdit_result.txt Editing_ratio.txt
+# Check the editing status of each nanopore read
+perl NanoReads_status.pl DeepEdit_result.txt NanoReads_status.txt
+```
+
+
+
 ### 5. Train your own models
 
 If you want to train a new model using your own data, please do:
