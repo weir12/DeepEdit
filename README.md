@@ -45,6 +45,8 @@ tombo resquiggle DeepEdit/Getting_Started/nanopore_reads/ DeepEdit/Getting_Start
 
 ​	Python(3.8.3) modules: re, sys, h5py(2.10.0)
 
+​    samtools
+
 ​	files: 
 
 ​		1. target_site.bed: This is a .bed file containing the sites of your interest. The first column of this file is the transcript id, the second and third column are the site location. Please refer to the example file (DeepEdit/Getting_Started/target_site.bed) for detail. 

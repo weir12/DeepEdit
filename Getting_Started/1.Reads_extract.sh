@@ -24,12 +24,14 @@ while [[ $# -gt 0 ]];do
   esac
 done
 
+echo -n "" > $Out
+
 find $Fast5 -name "*.fast5" > .fast5Index.tmp
 for ((i=1; i<=`wc -l $Site | awk '{print $1}'`; i++))  
 do
 head -n $i $Site | tail -n 1 > .bed.tmp
 cat .bed.tmp | awk '{print ">"$1"\t"$2}' >> $Out
-samtools view -L .bed.tmp -o .reads.tmp $Bam
+samtools view -F 16 -L .bed.tmp -o .reads.tmp $Bam
 editsites_reads=`cat .reads.tmp | awk '{print $1"\n"}'`
 for reads in $editsites_reads
 do
