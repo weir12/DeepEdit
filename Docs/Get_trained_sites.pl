@@ -27,7 +27,7 @@ while(<REF>){
     for(my $i=4; $i<=$length-2; $i++){
         my $motif = substr($seq,$i-4,6);
         if(grep (/$motif/, @trained_motif)){
-            print EXPORT $trans,"\t",$i,"\t",$motif,"\n";
+            print EXPORT $trans,"\t",$i,"\t",$i,"\n";
         }
     }
 }
