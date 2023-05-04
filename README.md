@@ -36,7 +36,7 @@ minimap2 -t 16 -ax map-ont -p 1.0 --secondary=no -u f -a DeepEdit/Getting_Starte
 ​	files: basecalled .fast5 nanopore reads
 
 ```bash
-tombo resquiggle DeepEdit/Getting_Started/nanopore_reads/ DeepEdit/Getting_Started/GCF_000002945.1_ASM294v2_rna.fna --processes 64 --corrected-group RawGenomeCorrected_001 --basecall-group Basecall_1D_001 --overwrite
+tombo resquiggle DeepEdit/Getting_Started/nanopore_reads/ DeepEdit/Getting_Started/GCF_000002945.1_ASM294v2_rna.fna --processes 64 --corrected-group RawGenomeCorrected_001 --basecall-group Basecall_1D_001 --overwrite --include-event-stdev
 ```
 
 ### 3. Feature extraction
