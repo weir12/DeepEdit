@@ -30,8 +30,6 @@ with open(file,'r') as file_obj:
                     signal_std=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Events']['norm_stdev']
                     signal_length=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Events']['length']
                     signal_motif=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Events']['base']
-                    if len(signal_motif[locus_on_reads-4:locus_on_reads+2]) != 6 or len(signal_mean[locus_on_reads-4:locus_on_reads+2]) != 6 or len(signal_std[locus_on_reads-4:locus_on_reads+2]) != 6 or len(signal_length[locus_on_reads-4:locus_on_reads+1]) != 6:
-                        continue
                     print(transi,end='-')
                     print(position,end=',')
                     print(uuid,end=',')
