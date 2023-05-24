@@ -15,7 +15,6 @@ with open(file,'r') as file_obj:
             if m:
                 transi = m.group(1)
                 position = m.group(2)
-#               output.write('{0}\n'.format(content))
             else:
                 fast5_fn=content
                 fast5_line=fast5_fn.split("/")
@@ -24,7 +23,7 @@ with open(file,'r') as file_obj:
                 chrom=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Alignment'].attrs['mapped_chrom']
                 start=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Alignment'].attrs['mapped_start']
                 locus_on_reads=int(position)-start
-                if locus_on_reads <= 6:
+                if locus_on_reads <= 6 or int(position) >= end-5 or strand != '+' or chrom != transi:
                     continue
                 else:
                     signal_mean=fast5_data['Analyses']['RawGenomeCorrected_001']['BaseCalled_template']['Events']['norm_mean']
