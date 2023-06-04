@@ -53,11 +53,11 @@ tombo resquiggle DeepEdit/Getting_Started/nanopore_reads/ DeepEdit/Getting_Start
 
 ```bash
 # 1. Get the nanopore reads that mapped to the target sites
-# Please provide the absolute path of BamPath and Fast5Dir
+# Please provide the absolute path of BamPath, Fast5Dir and Output
 sh 1.Reads_extract.sh --SiteFile target_site.bed \
 --BamPath DeepEdit/Getting_Started/nanopore.sam \
 --Fast5Dir DeepEdit/Getting_Started/nanopore_reads \
---Output target_site_reads.txt
+--Output DeepEdit/Getting_Started/target_site_reads.txt
 # 2. Extract features
 # Get the values in 'RawGenomeCorrected_001' slot. 
 python 2.feature_extract.py target_site_reads.txt > target_site_features.csv
